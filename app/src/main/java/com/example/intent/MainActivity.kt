@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.content.Intent
+import android.net.Uri
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +23,14 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("UserName",name)
             startActivity(intent)
         }
+
+        val btnOpenWeb: Button = findViewById(R.id.btnWeb)
+        btnOpenWeb.setOnClickListener {
+            val webpage = Uri.parse("http://www.google.com")
+            val intent = Intent(Intent.ACTION_VIEW, webpage)
+            startActivity(intent)
+        }
+
 
     }
 
