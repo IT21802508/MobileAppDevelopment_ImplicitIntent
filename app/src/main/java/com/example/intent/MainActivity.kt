@@ -31,8 +31,20 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val btnDialPhone: Button = findViewById(R.id.btnPhone)
+        btnDialPhone.setOnClickListener {
+            val phoneUri = Uri.parse("tel:1234567890")
+            val intent = Intent(Intent.ACTION_DIAL, phoneUri)
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            }
+        }
+
+
 
     }
+
+
 
 
 
